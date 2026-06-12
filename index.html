@@ -79,12 +79,10 @@ const C = { float:'#6b7a8d', ppk:'#ffb14d', ins:'#3ddc84', smooth:'#4da3ff',
 function card(k, v) {
   return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`;
 }
-const p1 = S.pass1, p2 = S.pass2, p3 = S.pass3;
+const p3 = S.pass3;
 document.getElementById('cards').innerHTML =
   card('Valid epochs', `${S.valid_epochs} <small>(${S.duration}s)</small>`) +
-  card('Pass 1 float fix', `${p1.rate}% <small>${p1.nfix}/${p1.ntot}</small>`) +
-  card('Pass 2 GNSS fix', `${p2.rate}% <small>${p2.nfix}/${p2.ntot}</small>`) +
-  card('Pass 3 PPK/INS fix', `<span class="ok">${p3.rate}%</span> <small>${p3.nfix}/${p3.ntot}</small>`) +
+  card('PPK/INS fix rate', `<span class="ok">${p3.rate}%</span> <small>${p3.nfix}/${p3.ntot}</small>`) +
   card('Satellites', `${S.ns_mean} <small>avg (${S.ns_min}–${S.ns_max})</small>`) +
   card('IMU', `${S.imu_rate} Hz <small>${S.imu_samples} samples</small>`);
 document.getElementById('attsrc').textContent =
